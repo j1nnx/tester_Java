@@ -1,13 +1,16 @@
 public class Main {
     public static void main(String[] args) {
         // Задание 1
-        int savings = 0;
+        int desire = 2_459_000;
+        int total = 0;
+        int amount = 15000;
+        double percent = 1D / 100;
         int month = 0;
-        float monthCharge = 15000;
-        while (savings < 2_459_000) {
+        while (total < desire) {
+            total += amount;
+            total = (int) (total * (1 + percent));
             month++;
-            savings += monthCharge;
-            System.out.println("Месяц " + month + " сумма накоплений равна " + savings + " рублей");
+            System.out.println("Месяц " + month + ", сумма накоплений равна " + total + " рублей.");
         }
 
         // Задание 2
@@ -63,15 +66,22 @@ public class Main {
         }
 
         // Задание 8
-        int i = 0;
-        while (i <= 2124) {
-            i += 79;
-            if (i >= 1824 && i <= 2124) {
-                System.out.println(i);
+        int period = 79;
+        int startS = 0;
+        int currentYear = 2024;
+        int start = currentYear - 200;
+        int end = currentYear + 100;
+        for (int year = startS; year < end; year += period) {
+            if (year > start) {
+                System.out.println(year);
             }
         }
-    }
-}
+
+
+
+            }
+        }
+
 
 
 
