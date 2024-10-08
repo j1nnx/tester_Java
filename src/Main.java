@@ -1,86 +1,80 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         // Задание 1
-        int desire = 2_459_000;
-        int total = 0;
-        int amount = 15000;
-        double percent = 1D / 100;
-        int month = 0;
-        while (total < desire) {
-            total += amount;
-            total = (int) (total * (1 + percent));
-            month++;
-            System.out.println("Месяц " + month + ", сумма накоплений равна " + total + " рублей.");
-        }
+        int[] weight = new int[3];
+        weight[0] = 1;
+        weight[1] = 2;
+        weight[2] = 3;
+
+        float[] floatWeight = {1.57f, 7.654f, 9.986f};
+
+        int[] month = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
 
         // Задание 2
-        int number = 1;
-        while (number <= 10) {
-            System.out.print(number + " ");
-            number = number + 1;
+        for (int i = 0; i <= weight.length - 1; i++) {
+            if (i != weight.length - 1) {
+                System.out.printf(weight[i] + ", ");
+            } else {
+                System.out.println(weight[i]);
+            }
         }
-        System.out.println();
-        for (int i = 10; i >= 1; i--) {
-            System.out.print(i + " ");
-        }
-        System.out.println();
 
+        for (int i = 0; i <= floatWeight.length - 1; i++) {
+            if (i != floatWeight.length - 1) {
+                System.out.printf(floatWeight[i] + ", ");
+            } else {
+                System.out.println(floatWeight[i]);
+            }
+        }
+        for (int i = 0; i <= month.length - 1; i++) {
+            if (i != month.length - 1) {
+                System.out.printf(month[i] + ", ");
+            } else {
+                System.out.println(month[i]);
+            }
+        }
 
         // Задание 3
-        int population = 12_000_000;
-        for (byte i = 1; i < 11; i++) {
-            int birth = population / 1000 * 17;
-            int death = population / 1000 * 8;
-            population = population + birth - death;
-            System.out.println("Год " + i + " численность населения составляет " + population);
+        for (int i = weight.length - 1; 0 <= i; i--) {
+            if (i != 0) {
+                System.out.printf(weight[i] + ", ");
+            } else {
+                System.out.println(weight[i]);
+            }
+        }
+        for (int j = floatWeight.length - 1; 0 <= j; j--) {
+            if (j != 0) {
+                System.out.printf(floatWeight[j] + ", ");
+            } else {
+                System.out.println(floatWeight[j]);
+            }
+        }
+        for (int i = month.length - 1; 0 <= i; i--) {
+            if (i != 0) {
+                System.out.printf(month[i] + ", ");
+            } else {
+                System.out.println(month[i]);
+            }
         }
 
         // Задание 4
-        int startCapital = 15000;
-        for (int i = 1; startCapital < 12_000_000; i++) {
-            startCapital = startCapital + (startCapital / 100 * 7);
-            System.out.println("Месяц " + i + ", сумма накоплений " + startCapital);
-        }
-
-        // Задание 5
-        int startCapital1 = 15000;
-        for (int i = 1; startCapital1 < 12_000_000; i++) {
-            startCapital1 = startCapital1 + (startCapital1 / 100 * 7);
-            if (i % 6 == 0)
-                System.out.println("Месяц " + i + ", сумма накоплений " + startCapital1);
-        }
-
-        // Задание 6
-        int startCapital2 = 15000;
-        for (byte month1 = 0; month1 <= 9 * 12; month1++) {
-            startCapital2 = startCapital2 + (startCapital2 / 100 * 7);
-            if (month1 % 6 == 0 && month1 > 0) {
-                System.out.println("Сумма накоплений " + startCapital2);
+        for (int i = 0; i <= weight.length - 1; i++) {
+            if (weight[i] % 2 != 0) {
+                weight[i] += 1;
             }
         }
+        //результат преобразования
+        System.out.println(Arrays.toString(weight));
 
-        // Задание 7
-        int Friday = 5;
-        for (int currentDay = Friday; currentDay <= 31; currentDay+=7) {
-            System.out.println("Сегодня пятница " + currentDay + "-е число. Необходимо подготовить отчет!");
-        }
 
-        // Задание 8
-        int period = 79;
-        int startS = 0;
-        int currentYear = 2024;
-        int start = currentYear - 200;
-        int end = currentYear + 100;
-        for (int year = startS; year < end; year += period) {
-            if (year > start) {
-                System.out.println(year);
-            }
-        }
+    }
+}
 
 
 
-            }
-        }
+
 
 
 
