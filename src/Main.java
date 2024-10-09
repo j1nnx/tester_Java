@@ -2,74 +2,47 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        // Задание 1
-        int[] weight = new int[3];
-        weight[0] = 1;
-        weight[1] = 2;
-        weight[2] = 3;
-
-        float[] floatWeight = {1.57f, 7.654f, 9.986f};
-
-        int[] month = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-
-        // Задание 2
-        for (int i = 0; i <= weight.length - 1; i++) {
-            if (i != weight.length - 1) {
-                System.out.printf(weight[i] + ", ");
-            } else {
-                System.out.println(weight[i]);
+        System.out.println("Задание 1");
+        int[] array = {50, 100, 150, 450, 7000};
+        int total = 0;
+        for (int value : array) {
+            total += value;
+        }
+        System.out.println("Сумма трат за месяц составила " + total + " рублей.");
+        System.out.println();
+        System.out.println("Задание 2");
+        int minWeight = 100;
+        int maxWeight = 0;
+        for (int k : array) {
+            if (k < minWeight) {
+                minWeight = k;
+            }
+            if (k > maxWeight) {
+                maxWeight = k;
             }
         }
-
-        for (int i = 0; i <= floatWeight.length - 1; i++) {
-            if (i != floatWeight.length - 1) {
-                System.out.printf(floatWeight[i] + ", ");
-            } else {
-                System.out.println(floatWeight[i]);
-            }
+        System.out.println("Минимальная сумма трат за неделю составила " + minWeight);
+        ;
+        System.out.println("Максимальная сумма трат за неделю составила " + maxWeight);
+        System.out.println();
+        System.out.println("Задание 3");
+        int[] week = {50, 100, 150, 450, 7000};
+        int totalW = 0;
+        for (int j : week) {
+            totalW += j;
         }
-        for (int i = 0; i <= month.length - 1; i++) {
-            if (i != month.length - 1) {
-                System.out.printf(month[i] + ", ");
-            } else {
-                System.out.println(month[i]);
-            }
+        float avg = totalW / 5f;
+        System.out.println("Средняя сумма трат за месяц составила " + avg + " рублей");
+        System.out.println();
+        System.out.println("Задание 4");
+        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int i = reverseFullName.length - 1; i >= 0; i--) {
+            System.out.print(reverseFullName[i]);
         }
-
-        // Задание 3
-        for (int i = weight.length - 1; 0 <= i; i--) {
-            if (i != 0) {
-                System.out.printf(weight[i] + ", ");
-            } else {
-                System.out.println(weight[i]);
-            }
-        }
-        for (int j = floatWeight.length - 1; 0 <= j; j--) {
-            if (j != 0) {
-                System.out.printf(floatWeight[j] + ", ");
-            } else {
-                System.out.println(floatWeight[j]);
-            }
-        }
-        for (int i = month.length - 1; 0 <= i; i--) {
-            if (i != 0) {
-                System.out.printf(month[i] + ", ");
-            } else {
-                System.out.println(month[i]);
-            }
-        }
-
-        // Задание 4
-        for (int i = 0; i <= weight.length - 1; i++) {
-            if (weight[i] % 2 != 0) {
-                weight[i] += 1;
-            }
-        }
-        //результат преобразования
-        System.out.println(Arrays.toString(weight));
-
-
     }
+
+
+
 }
 
 
