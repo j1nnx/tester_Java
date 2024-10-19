@@ -1,53 +1,57 @@
-import org.w3c.dom.ls.LSOutput;
+import java.time.LocalDate;
 
 public class Main {
+    public static String leapYear(int year) {
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            return year + " год является вискосным";
+        } else {
+            return year + " год не является вискосным";
+        }
+    }
+
+    public static String getRecommended(int clientOs, int yearOs){
+        String recomend = "";
+        if (yearOs <= 2015){
+            if (clientOs == 1){
+                recomend = "Установите обелгчённую верисю приложения для Android по ссылке";
+            } else if (clientOs == 0){
+                recomend = "Установите обелгчённую верисю приложения для ios по ссылке";
+            }
+        } else {
+            if (clientOs == 1){
+                recomend = "Установите версию приложения для Android по ссылке";
+            } else if (clientOs == 0) {
+                recomend = "Установите версию приложения для ios по ссылке";
+            }
+        }
+        return recomend;
+    }
+    public static String getDaysDelivery(int delivery){
+        if (delivery <= 20){
+            return "Потребуется дней: " + 1;
+        } else if (delivery <= 60){
+            return "Потребуется дней: " + 2;
+        } else if (delivery <= 100){
+            return "Потребуется дней: " + 3;
+        } else {
+            return "Доставка недоступна";
+        }
+    }
+
     public static void main(String[] args) {
         // Задание 1
-        for (int i = 1; i <= 10; i++) {
-            System.out.println(i);
-        }
+        int year = 2021;
+        System.out.println(leapYear(year));
 
-        // Задание 2
-        for (int i = 10; i >= 1; i--) {
-            System.out.println(i);
-        }
+        System.out.println(" ");
+        //Задание 2
+        int clientOs = 1;
+        int yearOs = LocalDate.now().getYear();
+        System.out.println(getRecommended(clientOs, yearOs));
 
+        System.out.println(" ");
         // Задание 3
-        for (int i = 0; i <= 17; i = i + 2) {
-            System.out.println(i);
-        }
-
-        // Задание 4
-        for (int i = 10; i >= -10; i--) {
-            System.out.println(i);
-        }
-
-        // Задание 5
-        for (int i = 1904; i < 2096; i = i + 4) {
-            System.out.println(i + " год является високосным");
-        }
-
-        // Задание 6
-        for (int i = 7; i <= 98; i = i + 7) {
-            System.out.println(i);
-        }
-
-        // Задание 7
-        for (int i = 1; i <= 512; i = i * 2) {
-            System.out.println(i);
-        }
-
-        // Задание 8 и 9
-        float saving = 0;
-        for (int i = 1; i <= 12; i++) {
-            saving = saving * 1.01f;
-            saving = saving + 29000;
-            System.out.println("Месяц " + i + ", сумма накоплений равна " + saving + " рублей");
-        }
-
-        // Задание 10
-        for (int i = 1; i <=10; i ++) {
-            System.out.println(2 + " * " + i + " = " + i * 2);
-        }
+        int delivery = 73;
+        System.out.println(getDaysDelivery(delivery));
     }
 }
